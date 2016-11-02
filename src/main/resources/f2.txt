@@ -1,0 +1,16 @@
+Adjudication/Судові справи=сause
+Assessor/Суди=court
+Cause/Судді=judgeSet-Народні засідателі=assessorSet-Працівники суду=courtWorkSet-Судові рішення=adjudication-Одна сторона=onePartySet-Інша сторона=otherPartySet-Свідки=witnessSet-Засідання=trialSet-Докази=evidenceSet-Залучені документи=documentses-Запити=requestsSet-Суди=court
+Court/Судді=judges-Народні засідателі=assessors-Працівники суду=courtWorks-Засідання=trials-Судові справи=causeSet
+CourtWork/Суди=court
+Documents/Судові справи=cause
+Evidence/Судові справи=cause
+Judge/Суди=court-Посади=pos-Судові справи=causes
+OneParty/Представники однієї сторони=representativesOnPs
+OtherParty/Представники іншої сторони=representativesOthPs
+RepresentativesOnP/Одна сторона=oneParty
+RepresentativesOthP/Друга сторона=otherParty
+Request/Судові справи=cause
+Trial/Свідки=witnessSet-Суди=court
+Witness/Засідання=trials-Судові справи=сause
+Posit/

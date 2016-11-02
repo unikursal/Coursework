@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(gainsboro, gray)" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controller.ControllerRoot">
+  <children>
+    <Separator id="rootSeparat" layoutX="0.0" layoutY="31.0" minHeight="5.0" minWidth="900.0" prefHeight="5.0" prefWidth="1200.0" style="-fx-background-color: gray;" />
+    <ChoiceBox fx:id="choiceBox" layoutX="12.0" layoutY="44.0" prefWidth="263.0" style="">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Суди" />
+          <String fx:value="Працівники суду" />
+          <String fx:value="Судді" />
+          <String fx:value="Посади" />
+          <String fx:value="Народні засідателі" />
+          <String fx:value="Засідання" />
+          <String fx:value="Судові рішення" />
+          <String fx:value="Судові справи" />
+          <String fx:value="Запити" />
+          <String fx:value="Залучені документи" />
+          <String fx:value="Докази" />
+          <String fx:value="Свідки" />
+          <String fx:value="Одна сторона" />
+          <String fx:value="Друга сторона" />
+          <String fx:value="Представники однієї сторони" />
+          <String fx:value="Представники іншої сторони" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Separator id="vertSepar" layoutX="595.0" layoutY="36.0" maxWidth="-1.0" orientation="VERTICAL" prefHeight="764.0" prefWidth="5.0" style="-fx-background-color: gray;" />
+    <Button fx:id="butSearch" layoutX="513.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#clickSearch" prefHeight="21.0" prefWidth="-1.0" style="-fx-border-color: gray; -fx-background-color: gainsboro;&#10;-fx-border-radius: 5.0; -fx-font: 9pt Arial;" text="Пошук">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <MenuBar fx:id="menuBar" layoutX="0.0" layoutY="1.0" prefHeight="30.0" prefWidth="335.0" style="-fx-background-color: silver; -fx-text-fill: black;&#10;-fx-font: 9pt Arial;">
+      <menus>
+        <Menu mnemonicParsing="false" style="" text="Налаштувати">
+          <items>
+            <MenuItem id="" mnemonicParsing="false" onAction="#onActionSettings" style="" text="Встановити суд за замовчуванням" fx:id="menuDefauktCourt" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" style="" text="Допомога" fx:id="helpMenu">
+          <items>
+            <MenuItem id="helpMenIt" mnemonicParsing="false" style="" text="Action 1">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" style="" text="Про програму" fx:id="abautMenu">
+          <items>
+            <MenuItem id="abautMenIt" mnemonicParsing="false" style="" text="Action 1">
+              <accelerator>
+                <KeyCodeCombination alt="UP" code="B" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+              </accelerator>
+            </MenuItem>
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <ScrollPane fx:id="scrPaneTable" layoutX="15.0" layoutY="76.0" prefHeight="646.0" prefWidth="558.0">
+      <content>
+        <TableView fx:id="tableView" cache="false" prefHeight="631.0" prefWidth="543.0" style=" " tableMenuButtonVisible="true">
+          <columns>
+            <TableColumn prefWidth="260.0" text="" fx:id="column1" />
+            <TableColumn prefWidth="260.0" text="" fx:id="column2" />
+          </columns>
+        </TableView>
+      </content>
+    </ScrollPane>
+    <ScrollPane fx:id="scrPaneLs" layoutX="614.0" layoutY="46.0" minHeight="495.0" minWidth="436.0" prefHeight="676.0" prefWidth="572.0">
+      <content>
+        <ListView fx:id="listView" minHeight="480.0" minWidth="421.0" prefHeight="661.0" prefWidth="557.0" />
+      </content>
+    </ScrollPane>
+    <Button fx:id="butEdit" layoutX="692.0" layoutY="747.0" mnemonicParsing="false" onMouseClicked="#clickedEdit" prefHeight="25.0" prefWidth="120.0" style="-fx-border-color: gray; -fx-background-color: gainsboro;&#10;-fx-border-radius: 5.0; -fx-font:10pt Arial;" text="Редагувати" visible="false">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <Button fx:id="butDel" focusTraversable="true" layoutX="1017.0" layoutY="747.0" mnemonicParsing="false" onMouseClicked="#clickedDel" prefHeight="25.0" prefWidth="120.0" style="-fx-border-color: gray; -fx-background-color: gainsboro;&#10;-fx-border-radius: 5.0; -fx-font:10pt Arial;" text="Видалити" visible="false">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <Button fx:id="butFiltr" layoutX="344.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#clickAddFiltr" prefHeight="21.0" style="-fx-border-color: gray; -fx-background-color: gainsboro;&#10;-fx-border-radius: 5.0; -fx-font: 9pt Arial;" text="Добавити фільтр">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <Button fx:id="butAdd" layoutX="215.0" layoutY="747.0" mnemonicParsing="false" onMouseClicked="#clickAdd" prefHeight="25.0" prefWidth="120.0" style="-fx-border-color: gray; -fx-background-color: gainsboro;&#10;-fx-border-radius: 5.0; -fx-font:10pt Arial;" text="Добавити" visible="false">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+  </children>
+</AnchorPane>

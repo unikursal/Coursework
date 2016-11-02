@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<TabPane fx:id="tabPane" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="576.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerCause">
+   <tabs>
+      <Tab fx:id="tabBasInf" closable="false" style="-fx-background-color: silver;" text="Основна інформація">
+         <content>
+            <GridPane alignment="CENTER_LEFT" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="576.0" style="-fx-background-color: linear-gradient(gainsboro, gray);" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="198.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="381.0" minWidth="10.0" prefWidth="328.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Номер" textAlignment="CENTER" />
+                  <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-size: 10pt; -fx-font-family: Arial Black;" text="Форма" GridPane.rowIndex="1" />
+                  <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Категорія" GridPane.rowIndex="2" />
+                  <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-family: Arial; -fx-font-size: 10pt;" text="Дата" GridPane.rowIndex="3" />
+                  <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Опис" GridPane.rowIndex="4" />
+                  <TextField fx:id="fieldForNum" GridPane.columnIndex="1">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <ChoiceBox fx:id="boxForForm" prefHeight="25.0" prefWidth="328.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                  <String fx:value="Адміністративне" />
+                                  <String fx:value="Кримінальне" />
+                                  <String fx:value="Цивільне" />
+                                  <String fx:value="Справи про адміністративні правопорушення" />
+                              </FXCollections>
+                        </items>
+                   </ChoiceBox>
+                   <ChoiceBox fx:id="boxForCategor" prefHeight="25.0" prefWidth="327.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <items>
+                               <FXCollections fx:factory="observableArrayList">
+                                   <String fx:value="Адміністративні справи" />
+                                   <String fx:value="Кримінальні справи" />
+                                   <String fx:value="Невідкладні судові розгляди" />
+                                   <String fx:value="Цивільні справи" />
+                                   <String fx:value="Справи про адміністративні правопорушення" />
+                               </FXCollections>
+                           </items>
+                   </ChoiceBox>
+                   <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="327.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Button mnemonicParsing="false" onMouseClicked="#clickSave" text="Зберегти" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </GridPane>
+         </content>
+      </Tab>
+      <Tab fx:id="tabSecondInf" closable="false" style="-fx-background-color: silver;" text="Додаткова інформація" onSelectionChanged="#selectChange">
+         <content>
+            <GridPane hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="576.0" style="-fx-background-color: linear-gradient(gainsboro, gray);" vgap="10.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="158.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="276.0" minWidth="10.0" prefWidth="260.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="85.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+              </rowConstraints>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <children>
+                  <Button fx:id="butAddJudg" mnemonicParsing="false" style="-fx-background-color: gainsboro; -fx-border-color: gray; -fx-border-radius: 5;" text="Добавити" GridPane.columnIndex="2">
+                     <effect>
+                        <Lighting diffuseConstant="1.3">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                               <javafx.scene.effect.Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </Button>
+                  <Button fx:id="butAddAsses" mnemonicParsing="false" style="-fx-background-color: gainsboro; -fx-border-color: gray; -fx-border-radius: 5;" text="Добавити" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <effect>
+                        <Lighting diffuseConstant="1.3">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                               <javafx.scene.effect.Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </Button>
+                  <Button fx:id="butAddCourtWork" mnemonicParsing="false" style="-fx-background-color: gainsboro; -fx-border-color: gray; -fx-border-radius: 5;" text="Добавити" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <effect>
+                        <Lighting diffuseConstant="1.3">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                               <javafx.scene.effect.Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </Button>
+                  <Button fx:id="addInf" mnemonicParsing="false" style="-fx-background-color: gainsboro; -fx-border-color: gray; -fx-border-radius: 5;" text="Добавити" onMouseClicked="#clickAddInf" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <effect>
+                        <Lighting diffuseConstant="1.3">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                               <javafx.scene.effect.Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </Button>
+                  <ComboBox fx:id="boxJudg" editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="266.0" GridPane.columnIndex="1"  />
+                  <ComboBox fx:id="boxAsses" editable="true" prefHeight="25.0" prefWidth="267.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="boxCourtWork" editable="true" prefHeight="25.0" prefWidth="265.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                  <Label style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Суддя" />
+                  <Label style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Народний засідатель" GridPane.rowIndex="1" />
+                  <Label style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Працівник суду" GridPane.rowIndex="2" />
+                  <Label style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Виберіть параметр" GridPane.rowIndex="3" />
+                  <ChoiceBox fx:id="chBoxForEntit" prefHeight="25.0" prefWidth="268.0" GridPane.columnIndex="1" GridPane.rowIndex="3" >
+                          <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Запити"/>
+                                    <String fx:value="Залучені документи"/>
+                                    <String fx:value="Докази"/>
+                                    <String fx:value="Свідки"/>
+                                    <String fx:value="Одна сторона"/>
+                                    <String fx:value="Друга сторона"/>
+                                </FXCollections>
+                          </items>
+                   </ChoiceBox>
+               </children>
+            </GridPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

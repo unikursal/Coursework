@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0001068115234" prefWidth="489.0" style="-fx-background-color: linear-gradient(gainsboro, gray);" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controller.ControllerAddFiltr">
+  <children>
+    <CheckBox  fx:id="checkBox" allowIndeterminate="false" indeterminate="false" layoutX="15.0" layoutY="23.0" mnemonicParsing="false" prefWidth="461.0" selected="true" style="-fx-font-family: Arial Black; &#10;-fx-font-size: 10pt;" text="Здійснити вибірку для суду за замовчуванням" />
+    <ChoiceBox fx:id="choiceForTable" layoutX="186.0" layoutY="72.0" prefWidth="187.0" />
+    <Button fx:id="butAddTable" layoutX="400.0" layoutY="70.0" mnemonicParsing="false" onMouseClicked="#addTable" prefWidth="76.0" style="-fx-border-color: gray;&#10; -fx-background-color: gainsboro; &#10;-fx-border-radius: 5.0;" text="Добавити">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <Separator layoutX="14.0" layoutY="111.0" prefHeight="5.0" prefWidth="461.0" style="-fx-background-color: gray;" />
+    <ChoiceBox fx:id="choiceBoxForAttr" layoutX="187.0" layoutY="135.0" prefWidth="289.0" />
+    <ChoiceBox fx:id="choiceBox" disable="true" layoutX="186.0" layoutY="172.0" prefWidth="289.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Більше" />
+          <String fx:value="Менше" />
+          <String fx:value="Більше, дорівнює" />
+          <String fx:value="Менше, дорівнює" />
+          <String fx:value="Дорівнює" />
+          <String fx:value="Містить" />
+          <String fx:value="Знаходиться між" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <TextField fx:id="textField" disable="true" layoutX="187.0" layoutY="212.0" prefWidth="137.0" />
+    <TextField fx:id="textFBetw" disable="true" layoutX="338.0" layoutY="212.0" prefWidth="137.0" />
+    <Button fx:id="butAdd" layoutX="194.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#addFiltr" style="-fx-border-color: gray;&#10; -fx-background-color: gainsboro; &#10;-fx-border-radius: 5.0;" text="Добавити фільтр">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <Label layoutX="21.0" layoutY="72.0" prefHeight="21.0" prefWidth="151.0" style="-fx-font-family: Arial Black; &#10;-fx-font-size: 10pt;&#10;" text="Приєднати таблицю" />
+    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="21.0" layoutY="135.0" prefHeight="21.0" prefWidth="137.0" style="-fx-font-family: Arial Black;&#10; -fx-font-size: 10pt;" text="Вибрати атрибут" />
+    <Label layoutX="21.0" layoutY="212.0" prefHeight="21.0" prefWidth="151.0" style="-fx-font-family: Arial Black; &#10;-fx-font-size: 10pt;" text="Ввести значення" />
+    <Label layoutX="21.0" layoutY="172.0" prefHeight="21.0" prefWidth="137.0" style="-fx-font-family: Arial Black; &#10;-fx-font-size: 10pt;" text="Вибрати критерій" />
+    <Separator layoutX="14.0" layoutY="295.0" minHeight="2.0" prefHeight="5.0" prefWidth="461.0" style="-fx-background-color: gray;" />
+    <ChoiceBox fx:id="boxForAttr2" layoutX="186.0" layoutY="314.0" prefWidth="289.0" />
+    <ChoiceBox fx:id="boxForAction" disable="true" layoutX="186.0" layoutY="352.0" prefWidth="187.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Знайти середнє значення" />
+          <String fx:value="Знайти суму" />
+          <String fx:value="Знайти максимальне значення" />
+          <String fx:value="Знайти мінімальне значення" />
+          <String fx:value="Підрахувати кількість рядків" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+    <Label layoutX="21.0" layoutY="314.0" prefHeight="21.0" prefWidth="123.00009999999747" style="-fx-font-family: Arial Black; &#10;-fx-font-size: 10pt;" text="Вибрати атрибут" />
+    <Label layoutX="21.0" layoutY="352.0" prefHeight="21.0" prefWidth="123.0" style="-fx-font-family: Arial Black; &#10;-fx-font-size: 10pt;" text="Вибрати дію" />
+    <Button fx:id="butActionPerf" disable="true" layoutX="401.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#performAct" style="-fx-border-color: gray;&#10; -fx-background-color: gainsboro; &#10;-fx-border-radius: 5.0;" text="Виконати">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <Separator layoutX="14.0" layoutY="389.0" minHeight="2.0" prefHeight="5.0" prefWidth="461.0" style="-fx-background-color: gray;" />
+    <Label layoutX="21.0" layoutY="406.0" prefHeight="21.0" prefWidth="123.0" style="-fx-font-family: Arial Black; &#10;-fx-font-size: 10pt;" text="Вибрати атрибут" />
+    <ChoiceBox fx:id="boxForAttr3" layoutX="187.0" layoutY="407.0" prefWidth="186.0" />
+    <Button fx:id="butAddGroup" disable="true" layoutX="402.0" layoutY="408.0" mnemonicParsing="false" onMouseClicked="#clickAddGroup" prefWidth="74.0" style="-fx-border-color: gray;&#10; -fx-background-color: gainsboro; &#10;-fx-border-radius: 5.0;" text=" Згрупувати">
+      <effect>
+        <Lighting diffuseConstant="1.3">
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+    </Button>
+    <Separator layoutX="14.0" layoutY="52.0" minHeight="5.0" prefHeight="5.0" prefWidth="462.0" style="-fx-background-color: gray;" />
+  </children>
+</AnchorPane>

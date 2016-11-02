@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER_LEFT" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: linear-gradient(gainsboro, gray);" vgap="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ControllerRepresentativesOnP">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="182.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Ім’я" textAlignment="CENTER" />
+      <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-size: 10pt; -fx-font-family: Arial Black;" text="Прізвище" GridPane.rowIndex="1" />
+      <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Адрес" GridPane.rowIndex="2" />
+      <Label prefHeight="22.0" prefWidth="170.0" style="-fx-font-family: Arial Black; -fx-font-size: 10pt;" text="Статус" GridPane.rowIndex="3" />
+      <Button id="button" mnemonicParsing="false" style="-fx-border-color: gray; -fx-background-color: gainsboro; -fx-border-radius: 5.0;" text="Зберегти" GridPane.columnIndex="1" GridPane.rowIndex="4" onMouseClicked="#clickSave">
+         <effect>
+            <Lighting diffuseConstant="1.3">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <javafx.scene.effect.Light.Distant />
+               </light>
+            </Lighting>
+         </effect>
+      </Button>
+      <TextField fx:id="fieldForName" GridPane.columnIndex="1">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <TextField fx:id="fieldForLName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="fieldForAddr" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="fieldForStatus" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</GridPane>

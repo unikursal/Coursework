@@ -1,0 +1,1 @@
+Суди=Court/Працівники суду=CourtWork/Судді=Judge/Народні засідателі=Assessor/Засідання=Trial/Судові рішення=Adjudication/Судові справи=Cause/Запити=Request/Залучені документи=Documents/Докази=Evidence/Свідки=Witness/Одна сторона=OneParty/Друга сторона=OtherParty/Представники однієї сторони=RepresentativesOnP/Представники іншої сторони=RepresentativesOthP/Посади=Posit

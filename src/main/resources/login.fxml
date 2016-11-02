@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: silver;" onKeyReleased="#keyReleased" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controller.ControllerLog">
+  <children>
+    <GridPane id="gridPane" alignment="CENTER" cache="true" cacheHint="DEFAULT" depthTest="INHERIT" hgap="10.0" layoutX="154.0" prefHeight="217.0" prefWidth="593.0" style="-fx-background-color:  linear-gradient(gainsboro, gray); -fx-background-radius: 10.0;" vgap="10.0" AnchorPane.topAnchor="192.0">
+      <children>
+        <Label fx:id="logLabel" style="-fx-font-size: 20pt; -fx-font-family: &quot;l&quot;;" text="Логін" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="passLabel" style="-fx-font-size: 20pt" text="Пароль" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <PasswordField fx:id="passField" alignment="CENTER" prefHeight="25.0" prefWidth="200.0" style="-fx-border-color: #a0a0a0; -fx-border-width: 3pt;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <TextField fx:id="logField" alignment="CENTER" prefHeight="25.0" prefWidth="171.0" style="-fx-border-color: #a0a0a0; -fx-border-width: 3pt; " GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button fx:id="logBut" mnemonicParsing="false" onMouseClicked="#onMouseClicked" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #ffffff;" text="Ввійти" textAlignment="LEFT" GridPane.columnIndex="2" GridPane.rowIndex="1">
+          <effect>
+            <Lighting>
+              <bumpInput>
+                <Shadow />
+              </bumpInput>
+              <light>
+                <javafx.scene.effect.Light.Distant />
+              </light>
+            </Lighting>
+          </effect>
+        </Button>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="123.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="322.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="236.0" minWidth="10.0" prefWidth="118.0" />
+      </columnConstraints>
+      <effect>
+        <Lighting>
+          <bumpInput>
+            <Shadow />
+          </bumpInput>
+          <light>
+            <javafx.scene.effect.Light.Distant />
+          </light>
+        </Lighting>
+      </effect>
+      <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+      </padding>
+      <rotationAxis>
+        <Point3D x="10.0" y="20.0" z="1.0" />
+      </rotationAxis>
+      <rowConstraints>
+        <RowConstraints maxHeight="158.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="91.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Label id="labelWelc" alignment="CENTER" contentDisplay="CENTER" layoutX="308.0" layoutY="65.0" prefWidth="300.0" style="-fx-font-size: 38pt; -fx-font-family: &quot;Arial Black&quot;;" text="Вітаємо">
+      <effect>
+        <InnerShadow color="#b2b2b2" offsetX="2.0" offsetY="2.0">
+          <input>
+            <Reflection />
+          </input>
+        </InnerShadow>
+      </effect>
+    </Label>
+  </children>
+</AnchorPane>
